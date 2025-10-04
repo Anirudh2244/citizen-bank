@@ -1,5 +1,192 @@
 @import "variables";
 @import "mixin";
 
+body {
+  font-family: Arial, sans-serif;
+  color: black;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  color: $primary-green;
+  font-size: 28px;
+  font-weight: normal;
+}
+
+p {
+  color: $text-grey;
+  line-height: 1.5;
+}
+
+h2 {
+  color: $primary-green;
+  font-weight: normal;
+}
+
+/* Header */
+.site-header {
+  @include flex-container(row);
+}
+
+.site-header-logo {
+  width: 55%;
+  max-width: 200px;
+  height: auto;
+  padding-top: $primary-padding;
+  padding-bottom: $primary-padding;
+}
+
+/* Hero Banner */
+.hero-banner {
+  width: 100%;
+  aspect-ratio: 3 / 1;
+  min-height: 200px;
+  max-height: 400px;
+
+  .trapezoid {
+    display: none; // hidden on mobile
+  }
+
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    background: url('../assets/main-image.jpg') center/cover no-repeat;
+  }
+}
+
+/* Main Content Wrapper */
+.page-content {
+  padding-left: $horizontal-padding;
+  padding-right: $horizontal-padding;
+}
+
+/* Investment Section */
+.investment {
+  @include flex-container(column);
+}
+
+.title_underline {
+  width: 100px;
+  height: 2px;
+  background-color: $primary-green;
+}
+
+.careers_button {
+  background-color: $primary-orange;
+  width: 150px;
+  height: 30px;
+  border: none;
+  color: $primary-white;
+}
+
+/* Advantages Section */
+.advantages {
+  @include flex-container(column);
+}
+
+.advantages_row {
+  @include flex-container(column);
+}
+
+.advantages_item {
+    margin-bottom: 1rem; 
+    &:nth-of-type(1)::after,
+    &:nth-of-type(2)::after,
+    &:nth-of-type(3)::after {
+        content: '';
+        display: block;
+        background-color: $text-grey;
+        width: 100%;
+        height: 1px;
+        margin-top: 1rem; 
+    }
+}
+
+.grey_divider {
+    display: none; 
+    background-color: $text-grey;
+    width: 100%;
+    height: 2px;
+    margin: 1rem 0;
+}
+
+.home_loans_title {
+  background-color: $primary-green;
+  color: white;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.home_loans_description {
+  background-color: #ebf7f5;
+  margin-top: 0;
+}
+
+.testimonial-cards {
+  @include flex-container(column);
+}
+
+.site-footer {
+  @extend .page-content;
+}
 
 
+/* Media Queries Section */
+
+@media (min-width: 1024px) {
+    .site-header {
+      justify-content: flex-start;
+      margin-left: $horizontal-padding;
+    }
+  
+    .advantages_row {
+      @include flex-container(row);
+      align-items: stretch; 
+      gap: 2rem; 
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+
+      .advantages_item {
+            flex: 1; 
+            margin-bottom: 0; 
+            &::after {
+                display: none;
+            }
+        }
+
+      .grey_divider {
+        display: block; 
+        background-color: $text-grey;
+        width: 1px;           
+        height: auto; 
+        align-self: stretch; 
+        margin: 0; 
+      }
+    }
+  
+    .testimonials {
+      @include flex-container(row);
+    }
+  
+    .hero-banner {
+      display: flex;
+      flex-direction: row;
+      height: calc(100vw / 3); 
+  
+      .trapezoid {
+        display: block;
+        width: 60%;
+        height: 100%;
+        background-color: $primary-green;
+        clip-path: polygon(25% 0, 100% 0, 100% 100%, 0 100%);
+      }
+  
+      .hero-image {
+        width: 50%;
+        height: 100%;
+        background: url('../assets/main-image.jpg') center/cover no-repeat;
+      }
+    }
+}
