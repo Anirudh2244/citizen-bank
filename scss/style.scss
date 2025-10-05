@@ -106,7 +106,8 @@ p {
 }
 
 .advantages_item {
-    padding-bottom: 10rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
     border-bottom: 1px solid $text-grey; 
 }
 
@@ -115,7 +116,7 @@ p {
 }
 
 .advantages_title{
-padding-bottom:0.5rem;
+padding-bottom:1rem;
 }
 .grey_divider {
     display: none;
@@ -161,6 +162,7 @@ padding-bottom:0.5rem;
 
 .testimonials_text {
     font-style: italic;
+    color: $primary-black;
     margin-bottom: 0.5rem;
     padding-right: 4rem;
     padding-left: 4rem;
