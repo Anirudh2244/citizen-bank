@@ -9,25 +9,28 @@ body {
   color: black;
   margin: 0;
   padding: 0;
-  line-height: 1.75rem;
+  line-height: 24px;
 }
 
 h1 {
   text-align: center;
   color: #21955e;
-  font-size: 2rem;
+  font-size: 32px;
   font-weight: normal;
+  line-height: 32px;
 }
 
 h2 {
   color: #21955e;
   font-weight: normal;
-  font-size: 1.5rem;
+  font-size: 24px;
+  line-height: 24px;
 }
 
 p {
   color: #939393;
-  font-size: 1rem;
+  line-height: 24px;
+  font-size: 16px;
 }
 
 /* Header */
@@ -36,8 +39,8 @@ p {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding-top: 2.25rem;
-  padding-bottom: 2.25rem;
+  padding-top: 36px;
+  padding-bottom: 36px;
 }
 
 .site-header-logo {
@@ -65,8 +68,13 @@ p {
 
 /* Main Content Wrapper */
 .page-content {
-  padding-left: 2rem;
-  padding-right: 2rem;
+  margin-left: 36px;
+  margin-right: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 56px;
 }
 
 /* Investment Section */
@@ -75,25 +83,25 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 3.5rem;
+  margin-top: 56px;
 }
 
 .title_underline {
   width: 100px;
   height: 2px;
-  margin-top: 1.75rem;
-  margin-bottom: 1.75rem;
+  margin-top: 24px;
+  margin-bottom: 24px;
   background-color: #21955e;
 }
 
 .careers_button {
   background-color: #e97300;
-  font-size: 1.5rem;
+  font-size: 24px;
   width: auto;
-  padding: 0.5rem 1rem;
+  padding: 8px 16px;
   border: none;
   color: #ffffff;
-  margin-top: 3.5rem;
+  margin-top: 56px;
   cursor: pointer;
 }
 
@@ -103,8 +111,6 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 3.5rem;
-  padding-bottom: 3.5rem;
 }
 
 .advantages_row {
@@ -115,27 +121,19 @@ p {
   margin-bottom: 0;
 }
 
-.advantages_row:first-of-type .advantages_item:last-child {
-  margin-bottom: 2.25rem;
-  border-bottom: none;
-}
-
 .advantages_item {
-  padding-top: 1.75rem;
-  padding-bottom: 1.75rem;
-  border-bottom: 1px solid rgb(172.5, 172.5, 172.5);
-}
-
-.advantages_row:first-child .advantages_item:first-child {
-  padding-top: 0;
-}
-
-.advantages_row:last-child .advantages_item:last-child {
-  border-bottom: none;
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
 
 .advantages_title {
-  padding-bottom: 1rem;
+  padding-bottom: 16px;
+}
+
+.grey_divider {
+  width: 100%;
+  height: 1px;
+  background-color: #939393;
 }
 
 .learn-more {
@@ -164,11 +162,11 @@ p {
   background-color: #21955e;
   color: #ffffff;
   text-align: center;
-  padding: 1rem 1.75rem;
+  padding: 16px 24px;
 }
 
 .home_loans_description {
-  padding: 1.75rem 1rem;
+  padding: 24px 16px;
 }
 
 /* Testimonials Section */
@@ -177,9 +175,8 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2.25rem;
-  padding-top: 3.5rem;
-  padding-bottom: 3.5rem;
+  gap: 36px;
+  margin-bottom: 56px;
 }
 
 .testimonial-cards {
@@ -195,13 +192,13 @@ p {
   width: 50%;
   height: auto;
   border-radius: 50%;
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
 }
 
 .testimonials_text {
   font-style: italic;
   color: #6e6e6e;
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
   padding-right: 4rem;
   padding-left: 4rem;
   background-image: url("../assets/qoute.png");
@@ -218,130 +215,59 @@ p {
 
 /* Footer */
 .site-footer {
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-top: 2.25rem;
-  padding-bottom: 2.25rem;
-  border-top: 2px solid #21955e;
+  padding: 24px 0;
+  gap: 24px;
+  border-top: 1px solid #21955e;
   display: flex;
   flex-direction: column;
-  gap: 1.75rem;
 }
 
 .footer_text {
+  margin-left: 36px;
+  margin-right: 36px;
   font-size: 0.8rem;
-  line-height: 1rem;
+  line-height: 16px;
+  color: #6e6e6e;
 }
 
 .socials {
+  margin-left: 36px;
+  margin-right: 36px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
+  gap: 8px;
   justify-content: flex-start;
 }
 
 .socials-logo {
-  width: 1.75rem;
-  height: 1.75rem;
+  width: 24px;
+  height: 24px;
   cursor: pointer;
 }
 
+.footer_link {
+  color: #6e6e6e;
+}
+
 .privacy {
+  margin-left: 36px;
+  margin-right: 36px;
   font-size: 0.8rem;
-  color: #939393;
+  color: #6e6e6e;
 }
 
 /* Media Queries Section */
 @media (min-width: 1024px) {
   .site-header {
     justify-content: flex-start;
-    padding-top: 3.5rem;
-    padding-bottom: 3.5rem;
-    margin-left: 2rem;
+    padding-top: 56px;
+    padding-bottom: 56px;
+    margin-left: 36px;
   }
   .site-header-logo {
     width: 20rem;
-  }
-  .advantages_row {
-    flex-direction: row;
-    padding-bottom: 3rem;
-    margin-bottom: 0;
-  }
-  .advantages_row .advantages_item {
-    flex: 1;
-    padding-left: 0;
-    padding-right: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-    border-bottom: none !important;
-  }
-  .advantages_row .advantages_item h2, .advantages_row .advantages_item p {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  .advantages_row .advantages_item:first-child h2, .advantages_row .advantages_item:first-child p {
-    padding-left: 0;
-  }
-  .advantages_row .advantages_item:last-child h2, .advantages_row .advantages_item:last-child p {
-    padding-right: 0;
-  }
-  .advantages_row .advantages_item:not(:last-child) {
-    position: relative;
-  }
-  .advantages_row .advantages_item:not(:last-child) h2, .advantages_row .advantages_item:not(:last-child) p {
-    padding-right: 1.75rem;
-  }
-  .advantages_row .advantages_item:not(:first-child) h2, .advantages_row .advantages_item:not(:first-child) p {
-    padding-left: 1.75rem;
-  }
-  .advantages_row .advantages_item:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 1px;
-    height: 100%;
-    background-color: rgb(172.5, 172.5, 172.5);
-  }
-  .home_loans_description {
-    padding: 1.75rem 3.5rem;
-  }
-  .testimonials {
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: stretch;
-    margin: 0 3.5rem;
-  }
-  .testimonial-cards {
-    gap: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    justify-content: space-around;
-    align-items: center;
-    text-align: center;
-  }
-  .testimonials_image {
-    width: 11rem;
-    height: 11rem;
-    border-radius: 50%;
-    -o-object-fit: cover;
-       object-fit: cover;
-    margin-bottom: 1rem;
-  }
-  .testimonials_text {
-    padding: 0 0.5rem;
-    margin-bottom: 0.5rem;
-    background-position: 0;
-  }
-  .testimonials_author {
-    padding: 0 0.5rem;
-    margin-bottom: 0.5rem;
-    display: flex;
-    align-items: center;
   }
   .hero-banner {
     display: block;
@@ -364,5 +290,66 @@ p {
     width: 100%;
     height: 100%;
     background: url("../assets/main-image.png") center/cover no-repeat;
+  }
+  .advantages_list {
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 48px;
+  }
+  .advantages_list .grey_divider {
+    width: 1px;
+    height: 120px;
+    background-color: #939393;
+    margin: auto 0;
+  }
+  .advantages_list .grey_divider:nth-of-type(4) {
+    display: none;
+  }
+  .advantages_list .advantages_item {
+    width: calc((100% - 96px - 1px) / 2);
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .home_loans_description {
+    padding: 24px 56px;
+  }
+  .testimonials {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: stretch;
+    gap: 56px;
+  }
+  .testimonial-cards {
+    padding: 0 36px;
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: start;
+    align-items: center;
+    text-align: center;
+  }
+  .testimonials_image {
+    width: 11rem;
+    height: 11rem;
+    border-radius: 50%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    margin-bottom: 16px;
+  }
+  .testimonials_text {
+    padding: 0 8px;
+    margin-bottom: 8px;
+    background-position: 0;
+  }
+  .testimonials_author {
+    padding: 0 8px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
   }
 }/*# sourceMappingURL=style.css.map */

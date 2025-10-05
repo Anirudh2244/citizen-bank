@@ -1,9 +1,9 @@
-$font-family: 'Arial, sans-serif';
+$font-family: "Arial, sans-serif";
 
 // Typography Scale
-$heading-text: 2rem;
-$sub-heading-text: 1.5rem;
-$para-text: 1rem;
+$heading-text: 32px;
+$sub-heading-text: 24px;
+$para-text: 16px;
 
 // Color Palette
 $primary-green: #21955e;
@@ -12,13 +12,16 @@ $primary-black: #6e6e6e;
 $primary-white: #ffffff;
 $text-grey: #939393;
 
-$space-xs: 0.5rem;   // 8px
-$space-sm: 1rem;     // 16px
-$space-md: 1.75rem;   // 24px
-$space-lg: 2.25rem;  // 36px
-$space-xl: 3rem;     // 48px
-$space-xxl: 4rem;    // 64px
-$space-3xl: 3.5rem;  // 56px 
+$space-xs: 8px;
+$space-sm: 16px;
+$space-md: 24px;
+$space-lg: 36px;
+$space-xl: 48px;
+$space-xxl: 64px;
+$space-3xl: 56px;
 
-$horizontal-padding: 2rem; 
-$gap: 2rem; 
+$divider-height: 120px;
+
+$break-point-sm: 576px;
+$break-point-md: 768px;
+$break-point-lg: 1024px;

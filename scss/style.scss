@@ -2,388 +2,349 @@
 @import "mixin";
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    color: black;
-    margin: 0;
-    padding: 0;
-    line-height: $space-md; 
+  font-family: Arial, sans-serif;
+  color: black;
+  margin: 0;
+  padding: 0;
+  line-height: $space-md;
 }
 
 h1 {
-    text-align: center;
-    color: $primary-green;
-    font-size: $heading-text;
-    font-weight: normal;
+  text-align: center;
+  color: $primary-green;
+  font-size: $heading-text;
+  font-weight: normal;
+  line-height: $heading-text;
 }
 
 h2 {
-    color: $primary-green;
-    font-weight: normal;
-    font-size: $sub-heading-text;
+  color: $primary-green;
+  font-weight: normal;
+  font-size: $sub-heading-text;
+  line-height: $sub-heading-text;
 }
 
 p {
-    color: $text-grey;
-    font-size: $para-text;  
+  color: $text-grey;
+  line-height: $para-text * 1.5;
+  font-size: $para-text;
 }
 
 /* Header */
 .site-header {
-    @include flex-container(row);
-    padding-top: $space-lg; 
-    padding-bottom: $space-lg;
+  @include flex-container(row);
+  padding-top: $space-lg;
+  padding-bottom: $space-lg;
 }
 
 .site-header-logo {
-    width: 15rem;
-    height: auto;
-    margin-top: 0; 
-    margin-bottom: 0;
+  width: 15rem;
+  height: auto;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 /* Hero Banner */
 .hero-banner {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  max-height: auto;
+  position: relative;
+
+  .trapezoid {
+    display: none; /* Hidden on mobile */
+  }
+
+  .hero-image {
     width: 100%;
-    aspect-ratio: 3 / 2;
-    max-height: auto;
-    position: relative; 
-
-    .trapezoid {
-        display: none; /* Hidden on mobile */
-    }
-
-    .hero-image {
-        width: 100%; 
-        height: 100%;
-        background: url('../assets/mobile-main-image.png') center/cover no-repeat;
-    }
+    height: 100%;
+    background: url("../assets/mobile-main-image.png") center/cover no-repeat;
+  }
 }
 
 /* Main Content Wrapper */
 .page-content {
-    padding-left: $horizontal-padding;
-    padding-right: $horizontal-padding;
+  @include horizontal-margin;
+  @include flex-container(column);
+  gap: $space-3xl;
 }
 
 /* Investment Section */
 .investment {
-    @include flex-container(column);
-    padding-top: $space-3xl;
-    
+  @include flex-container(column);
+  margin-top: $space-3xl;
 }
 
 .title_underline {
-    width: 100px;
-    height: 2px;
-    margin-top: $space-md; 
-    margin-bottom: $space-md; 
-    background-color: $primary-green;
+  width: 100px;
+  height: 2px;
+  margin-top: $space-md;
+  margin-bottom: $space-md;
+  background-color: $primary-green;
 }
 
 .careers_button {
-    background-color: $primary-orange;
-    font-size: $sub-heading-text;
-    width: auto;
-    padding: $space-xs $space-sm;
-    border: none;
-    color: $primary-white;
-    margin-top: $space-3xl; 
-    cursor: pointer;
+  background-color: $primary-orange;
+  font-size: $sub-heading-text;
+  width: auto;
+  padding: $space-xs $space-sm;
+  border: none;
+  color: $primary-white;
+  margin-top: $space-3xl;
+  cursor: pointer;
 }
 
 /* Advantages Section */
 .advantages {
-    @include flex-container(column);
-    padding-top: $space-3xl;
-    padding-bottom: $space-3xl; 
+  @include flex-container(column);
+  // padding-top: $space-3xl;
+  // padding-bottom: $space-3xl;
 }
 
 .advantages_row {
-    @include flex-container(column);
-    margin-bottom: 0; 
-}
-
-
-.advantages_row:first-of-type {
-    .advantages_item:last-child {
-        margin-bottom: $space-lg;
-        border-bottom: none; 
-    }
+  @include flex-container(column);
+  margin-bottom: 0;
 }
 
 .advantages_item {
-    padding-top: $space-md; 
-    padding-bottom: $space-md; 
-    border-bottom: 1px solid lighten($text-grey, 10%); 
+  padding-top: $space-md;
+  padding-bottom: $space-md;
 }
 
-.advantages_row:first-child .advantages_item:first-child {
-    padding-top: 0; 
+.advantages_title {
+  padding-bottom: $space-sm;
 }
 
-.advantages_row:last-child .advantages_item:last-child {
-    border-bottom: none; 
-}
-
-.advantages_title{
-    padding-bottom: $space-sm;
+.grey_divider {
+  width: 100%;
+  height: 1px;
+  background-color: $text-grey;
 }
 
 .learn-more {
-    color: #97b16e;
-    font-weight: 500; 
-    text-decoration: none;
-    position: relative;
-  
-    &:hover {
-      text-decoration: underline;
-    }
-  
-    &::after {
-      content: ">"; 
-      font-weight: lighter;
-      font-size: 1.5em; 
-      margin-left: 0.10em; 
-      vertical-align: middle; 
-    }
+  color: #97b16e;
+  font-weight: 500;
+  text-decoration: none;
+  position: relative;
+
+  &:hover {
+    text-decoration: underline;
   }
+
+  &::after {
+    content: ">";
+    font-weight: lighter;
+    font-size: 1.5em;
+    margin-left: 0.1em;
+    vertical-align: middle;
+  }
+}
 
 /* Home Loans Section */
 .home-loans {
-    background-color: #ebf7f5;
+  background-color: #ebf7f5;
 }
 
 .home_loans_title {
-    background-color: $primary-green;
-    color: $primary-white;
-    text-align: center;
-    padding: $space-sm $space-md;  
+  background-color: $primary-green;
+  color: $primary-white;
+  text-align: center;
+  padding: $space-sm $space-md;
 }
 
 .home_loans_description {
-    padding: $space-md $space-sm; 
+  padding: $space-md $space-sm;
 }
 
 /* Testimonials Section */
 .testimonials {
-    @include flex-container(column);
-    gap: $space-lg; 
-    padding-top: $space-3xl; 
-    padding-bottom: $space-3xl;
+  @include flex-container(column);
+  gap: $space-lg;
+  margin-bottom: $space-3xl;
 }
 
 .testimonial-cards {
-    @include flex-container(column);
-    align-items: center;
-    text-align: center;
+  @include flex-container(column);
+  align-items: center;
+  text-align: center;
 }
 
 .testimonials_image {
-    width: 50%;
-    height: auto;
-    border-radius: 50%;
-    margin-bottom: $space-sm;
-
+  width: 50%;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: $space-sm;
 }
 
 .testimonials_text {
-    font-style: italic;
-    color: $primary-black;
-    margin-bottom: $space-xs;
-    padding-right: 4rem;
-    padding-left: 4rem;
-    background-image: url('../assets/qoute.png');
-    background-repeat: no-repeat;
-    background-size: 70px; 
-    background-position: 25% 0; 
+  font-style: italic;
+  color: $primary-black;
+  margin-bottom: $space-xs;
+  padding-right: 4rem;
+  padding-left: 4rem;
+  background-image: url("../assets/qoute.png");
+  background-repeat: no-repeat;
+  background-size: 70px;
+  background-position: 25% 0;
 }
 
 .testimonials_author {
-    padding-right: 20%;
-    padding-left: 20%;
-    color: $primary-green;
+  padding-right: 20%;
+  padding-left: 20%;
+  color: $primary-green;
 }
 
 /* Footer */
 .site-footer {
-    padding-left: $horizontal-padding;
-    padding-right: $horizontal-padding;
-    padding-top: $space-lg; 
-    padding-bottom: $space-lg;
-    border-top: 2px solid $primary-green;
-    display: flex;
-    flex-direction: column;
-    gap: $space-md; 
-  }
-  
-  .footer_text {
-    font-size: 0.8rem;
-    line-height: $space-sm; 
-  }
-  
-  .socials {
-    @include flex-container(row);
-    gap: $space-xs; 
-    justify-content: flex-start;
-  }
-  
-  .socials-logo {
-    width: $space-md;
-    height: $space-md;
-    cursor: pointer;
-  }
-  
-  .privacy {
-    font-size: 0.8rem;
-    color: $text-grey;
-  }
-  
+  padding: $space-md 0;
+  gap: $space-md;
+  border-top: 1px solid $primary-green;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer_text {
+  @include horizontal-margin;
+  font-size: 0.8rem;
+  line-height: $space-sm;
+  color: $primary-black;
+}
+
+.socials {
+  @include horizontal-margin;
+  @include flex-container(row);
+  gap: $space-xs;
+  justify-content: flex-start;
+}
+
+.socials-logo {
+  width: $space-md;
+  height: $space-md;
+  cursor: pointer;
+}
+
+.footer_link {
+  color: $primary-black;
+}
+
+.privacy {
+  @include horizontal-margin;
+  font-size: 0.8rem;
+  color: $primary-black;
+}
 
 /* Media Queries Section */
-@media (min-width: 1024px) {
-    .site-header {
-        justify-content: flex-start;
-        padding-top: $space-3xl; 
-        padding-bottom: $space-3xl;
-        margin-left: $horizontal-padding;
+@media (min-width: $break-point-md) {
+}
+
+@media (min-width: $break-point-lg) {
+  .site-header {
+    justify-content: flex-start;
+    padding-top: $space-3xl;
+    padding-bottom: $space-3xl;
+    margin-left: $space-lg;
+  }
+
+  .site-header-logo {
+    width: 20rem;
+  }
+
+  .hero-banner {
+    display: block;
+    height: calc(100vw / 3);
+    position: relative;
+
+    .trapezoid {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: auto;
+      width: 50%;
+      height: 100%;
+
+      background-color: rgba(43, 113, 91, 0.8);
+      z-index: 10;
+      clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
     }
 
-    .site-header-logo{
-        width: 20rem;
+    .hero-image {
+      width: 100%;
+      height: 100%;
+      background: url("../assets/main-image.png") center/cover no-repeat;
+    }
+  }
+
+  .advantages_list {
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-xl;
+
+    .grey_divider {
+      width: 1px;
+      height: $divider-height;
+      background-color: $text-grey;
+      margin: auto 0;
+
+      &:nth-of-type(4) {
+        display: none;
+      }
     }
 
-    .advantages_row {
-        flex-direction: row;
-        padding-bottom: $space-xl; // 2*space-3xl
-        margin-bottom: 0; 
-    
-        
-        .advantages_item {
-            flex: 1;
-            padding-left: 0;
-            padding-right: 0;
-            padding-top: 0; 
-            padding-bottom: 0; 
-            border-bottom: none !important;
-
-            h2, p {
-                padding-left: $space-sm;
-                padding-right: $space-sm;
-            }
-            
-            &:first-child {
-                h2, p {
-                    padding-left: 0; 
-                }
-            }
-            
-            &:last-child {
-                h2, p {
-                    padding-right: 0; 
-                }
-            }
-            
-            &:not(:last-child) {
-                position: relative; 
-                
-                
-                h2, p {
-                    padding-right: $space-md; 
-                }
-            }
-            
-            &:not(:first-child) {
-                h2, p {
-                    padding-left: $space-md; 
-                }
-            }
-
-            // Vertical Divider Style
-            &:not(:last-child)::after {
-                content: '';
-                position: absolute;
-                top: 0;
-                right: 0; 
-                width: 1px;
-                height: 100%; 
-                background-color: lighten($text-grey, 10%);
-            }
-        }
+    .advantages_item {
+      width: calc((100% - ($space-xl * 2) - 1px) / 2);
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: 0;
+      padding-bottom: 0;
     }
+  }
 
-    .home_loans_description {
-        padding: $space-md $space-3xl; 
-    }
+  .home_loans_description {
+    padding: $space-md $space-3xl;
+  }
 
-    .testimonials {
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-items: stretch;
-        margin: 0 $space-3xl;
-      }
-    
-      .testimonial-cards {
-        // padding: $space-lg;
-        gap: $space-sm;
-        @include flex-container(column);
-        justify-content: space-around; 
-        align-items: center;
-        text-align: center;
-      }
-    
-      .testimonials_image {
-        width: 11rem; 
-        height: 11rem;
-        border-radius: 50%;
-        object-fit: cover;
-        margin-bottom: $space-sm;
-      }
-    
-      .testimonials_text {         
-        padding: 0 $space-xs;
-        margin-bottom: $space-xs;
-        background-position: 0;  
-      }
+  .testimonials {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: stretch;
+    gap: $space-3xl;
+  }
 
-      .testimonials_author {         
-        padding: 0 $space-xs;
-        margin-bottom: $space-xs;
-        display: flex;
-        align-items: center;  
-      }
-     
+  .testimonial-cards {
+    padding: 0 $space-lg;
+    gap: $space-sm;
+    @include flex-container(column);
+    justify-content: start;
+    align-items: center;
+    text-align: center;
+  }
 
-      .hero-banner {
-        display: block; 
-        height: calc(100vw / 3); 
-        position: relative; 
+  .testimonials_image {
+    width: 11rem;
+    height: 11rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: $space-sm;
+  }
 
-        .trapezoid {
-            display: block; 
-            position: absolute;
-            top: 0;
-            right: 0; 
-            left: auto; 
-            width: 50%;
-            height: 100%;
-            
-            
-            background-color: rgba(43, 113, 91, 0.8); 
-            z-index: 10; 
-            clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
-        }
+  .testimonials_text {
+    padding: 0 $space-xs;
+    margin-bottom: $space-xs;
+    background-position: 0;
+  }
 
-        .hero-image {
-            width: 100%; 
-            height: 100%;
-            background: url('../assets/main-image.png') center/cover no-repeat;
-        }
-    }
-    
+  .testimonials_author {
+    padding: 0 $space-xs;
+    margin-bottom: $space-xs;
+    display: flex;
+    align-items: center;
+  }
 }

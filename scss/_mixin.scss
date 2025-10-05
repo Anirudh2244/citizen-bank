@@ -6,3 +6,7 @@
 }
 
 
+@mixin horizontal-margin {
+    margin-left: $space-lg;
+    margin-right: $space-lg;
+}
