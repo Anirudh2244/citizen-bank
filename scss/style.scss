@@ -39,8 +39,8 @@ p {
 /* Header */
 .site-header {
   @include flex-container(row);
-  padding-top: $space-lg;
-  padding-bottom: $space-lg;
+  margin-top: $space-lg;
+  margin-bottom: $space-lg;
 }
 
 .site-header-logo {
@@ -103,8 +103,6 @@ p {
 /* Advantages Section */
 .advantages {
   @include flex-container(column);
-  // padding-top: $space-3xl;
-  // padding-bottom: $space-3xl;
 }
 
 .advantages_row {
@@ -246,8 +244,8 @@ p {
 @media (min-width: $break-point-lg) {
   .site-header {
     justify-content: flex-start;
-    padding-top: $space-3xl;
-    padding-bottom: $space-3xl;
+    margin-top: $space-3xl;
+    margin-bottom: $space-3xl;
     margin-left: $space-lg;
   }
 
@@ -300,10 +298,7 @@ p {
 
     .advantages_item {
       width: calc((100% - ($space-xl * 2) - 1px) / 2);
-      padding-left: 0;
-      padding-right: 0;
-      padding-top: 0;
-      padding-bottom: 0;
+      padding: 0;
     }
   }
 
@@ -338,7 +333,7 @@ p {
   .testimonials_text {
     padding: 0 $space-xs;
     margin-bottom: $space-xs;
-    background-position: 0;
+    background-position: top left;
   }
 
   .testimonials_author {
