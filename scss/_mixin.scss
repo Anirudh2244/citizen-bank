@@ -6,11 +6,11 @@
 }
 
 @mixin horizontal-margin {
-  margin-left: $space-md; // mobile: 24px
-  margin-right: $space-md;
+  margin-left: $space-sm; // mobile: 24px
+  margin-right: $space-sm;
 
   @media (min-width: $break-point-lg) {
-    margin-left: $space-lg; // desktop: 36px
-    margin-right: $space-lg;
+    margin-left: $space-md; // desktop: 36px
+    margin-right: $space-md;
   }
 }
