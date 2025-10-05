@@ -1,192 +1,307 @@
 @import "variables";
 @import "mixin";
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  color: black;
-  margin: 0;
-  padding: 0;
+    font-family: Arial, sans-serif;
+    color: black;
+    margin: 0;
+    padding: 0;
+    line-height: 2rem;
+
 }
 
 h1 {
-  text-align: center;
-  color: $primary-green;
-  font-size: 28px;
-  font-weight: normal;
-}
-
-p {
-  color: $text-grey;
-  line-height: 1.5;
+    text-align: center;
+    color: $primary-green;
+    font-size: $heading-text;
+    font-weight: normal;
 }
 
 h2 {
-  color: $primary-green;
-  font-weight: normal;
+    color: $primary-green;
+    font-weight: normal;
+    font-size: $sub-heading-text;
+}
+
+p {
+    color: $text-grey;
+    font-size: $para-text;  
 }
 
 /* Header */
 .site-header {
-  @include flex-container(row);
+    @include flex-container(row);
 }
 
 .site-header-logo {
-  width: 55%;
-  max-width: 200px;
-  height: auto;
-  padding-top: $primary-padding;
-  padding-bottom: $primary-padding;
+    height: 2.25rem;
+    width: auto;
+    margin-top: $section-padding; //3.375rem- 54px
+    margin-bottom: $section-padding;
 }
 
 /* Hero Banner */
 .hero-banner {
-  width: 100%;
-  aspect-ratio: 3 / 1;
-  min-height: 200px;
-  max-height: 400px;
-
-  .trapezoid {
-    display: none; // hidden on mobile
-  }
-
-  .hero-image {
     width: 100%;
-    height: 100%;
-    background: url('../assets/main-image.jpg') center/cover no-repeat;
-  }
+    aspect-ratio: 3 / 1;
+    min-height: 200px;
+    max-height: 450px;
+
+    .trapezoid {
+        display: none;
+    }
+
+    .hero-image {
+        width: 100%;
+        height: 100%;
+        background: url('../assets/main-image.jpg') center/cover no-repeat;
+    }
 }
 
 /* Main Content Wrapper */
 .page-content {
-  padding-left: $horizontal-padding;
-  padding-right: $horizontal-padding;
+    padding-left: $horizontal-padding;
+    padding-right: $horizontal-padding;
 }
 
 /* Investment Section */
 .investment {
-  @include flex-container(column);
+    @include flex-container(column);
+    padding-top: $section-padding;
 }
 
 .title_underline {
-  width: 100px;
-  height: 2px;
-  background-color: $primary-green;
+    width: 100px;
+    height: 2px;
+    margin-top:1.625rem;
+    margin-bottom:1.625rem;
+    background-color: $primary-green;
+    margin-bottom: $section-padding-bottom;
 }
 
 .careers_button {
-  background-color: $primary-orange;
-  width: 150px;
-  height: 30px;
-  border: none;
-  color: $primary-white;
+    background-color: $primary-orange;
+    font-size: $sub-heading-text;
+    width: auto;
+    padding:0.5rem 1rem;
+    border: none;
+    color: $primary-white;
+    margin-top: $section-padding;
+    margin-bottom: $section-padding;
 }
 
 /* Advantages Section */
 .advantages {
-  @include flex-container(column);
+    @include flex-container(column);
 }
 
 .advantages_row {
-  @include flex-container(column);
+    @include flex-container(column);
 }
 
 .advantages_item {
-    margin-bottom: 1rem; 
-    &:nth-of-type(1)::after,
-    &:nth-of-type(2)::after,
-    &:nth-of-type(3)::after {
-        content: '';
-        display: block;
-        background-color: $text-grey;
-        width: 100%;
-        height: 1px;
-        margin-top: 1rem; 
-    }
+    padding-bottom: 10rem;
+    border-bottom: 1px solid $text-grey; 
 }
 
+.advantages_row:last-child .advantages_item:last-child {
+    border-bottom: none; 
+}
+
+.advantages_title{
+padding-bottom:0.5rem;
+}
 .grey_divider {
-    display: none; 
-    background-color: $text-grey;
-    width: 100%;
-    height: 2px;
-    margin: 1rem 0;
+    display: none;
+}
+
+/* Home Loans Section */
+.home-loans {
+    background-color: #ebf7f5;
+    
 }
 
 .home_loans_title {
-  background-color: $primary-green;
-  color: white;
-  text-align: center;
-  margin-bottom: 0;
+    background-color: $primary-green;
+    color: $primary-white;
+    text-align: center;
+    padding: 0.5rem;
 }
 
 .home_loans_description {
-  background-color: #ebf7f5;
-  margin-top: 0;
+    padding: 0.5rem;
+}
+
+/* Testimonials Section */
+.testimonials {
+    @include flex-container(column);
+    gap: 2rem;
+    padding: $section-padding 0;
 }
 
 .testimonial-cards {
-  @include flex-container(column);
+    @include flex-container(column);
+    align-items: center;
+    text-align: center;
 }
 
+.testimonials_image {
+    width: 50%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+
+}
+
+.testimonials_text {
+    font-style: italic;
+    margin-bottom: 0.5rem;
+    padding-right: 4rem;
+    padding-left: 4rem;
+    background-image: url('../assets/qoute.png');
+    background-repeat: no-repeat;
+    background-size: 70px; // Set the desired size
+    background-position: 25% 0; 
+}
+
+.testimonials_author {
+    padding-right: 20%;
+    padding-left: 20%;
+    color: $primary-green;
+}
+
+/* Footer */
 .site-footer {
-  @extend .page-content;
-}
-
+    padding-left: $horizontal-padding;
+    padding-right: $horizontal-padding;
+    padding-top: 1.5rem;
+    border-top: 2px solid $primary-green;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; 
+  }
+  
+  .footer_text {
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+  }
+  
+  .socials {
+    @include flex-container(row);
+    gap: 0.5rem;
+  }
+  
+  .socials-logo {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  
+  .privacy {
+    font-size: 0.8rem;
+    color: $text-grey;
+  }
+  
 
 /* Media Queries Section */
-
 @media (min-width: 1024px) {
     .site-header {
-      justify-content: flex-start;
-      margin-left: $horizontal-padding;
+        justify-content: flex-start;
+        margin-left: $horizontal-padding;
     }
-  
-    .advantages_row {
-      @include flex-container(row);
-      align-items: stretch; 
-      gap: 2rem; 
-      padding-top: 2rem;
-      padding-bottom: 2rem;
 
-      .advantages_item {
-            flex: 1; 
-            margin-bottom: 0; 
-            &::after {
-                display: none;
+    .advantages_row {
+        flex-direction: row;
+        gap: 2rem;
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+        align-items: stretch;
+        
+        .advantages_item {
+            flex: 1;
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none !important;
+
+            &:not(:last-child) {
+                position: relative; 
+                padding-right: 2rem; 
+            }
+            
+            &:not(:last-child)::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0; 
+                width: 1px;
+                height: 100%; 
+                background-color: $text-grey;
             }
         }
+    }
 
-      .grey_divider {
-        display: block; 
-        background-color: $text-grey;
-        width: 1px;           
-        height: auto; 
-        align-self: stretch; 
-        margin: 0; 
-      }
+    .home_loans_description {
+        padding: 2rem 4rem;
     }
-  
+
     .testimonials {
-      @include flex-container(row);
-    }
-  
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: stretch; 
+      }
+    
+      .testimonial-cards {
+        padding:3rem;
+        @include flex-container(column);
+        justify-content: space-between; 
+        align-items: center;
+        text-align: center;
+      }
+    
+      .testimonials_image {
+        width: 11rem; 
+        height: 11rem;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 1rem;
+      }
+    
+      .testimonials_text {         
+        padding: 0 0.5rem;
+        margin-bottom: 0.5rem;
+        background-position: 0;  
+      }
+
+      .testimonials_author {         
+        padding: 0 0.5rem;
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;  
+      }
+     
+
     .hero-banner {
-      display: flex;
-      flex-direction: row;
-      height: calc(100vw / 3); 
-  
-      .trapezoid {
-        display: block;
-        width: 60%;
-        height: 100%;
-        background-color: $primary-green;
-        clip-path: polygon(25% 0, 100% 0, 100% 100%, 0 100%);
-      }
-  
-      .hero-image {
-        width: 50%;
-        height: 100%;
-        background: url('../assets/main-image.jpg') center/cover no-repeat;
-      }
+        display: flex;
+        flex-direction: row;
+        height: calc(100vw / 3);
+
+        .trapezoid {
+            display: block;
+            width: 60%;
+            height: 100%;
+            background-color: $primary-green;
+            clip-path: polygon(25% 0, 100% 0, 100% 100%, 0 100%);
+        }
+
+        .hero-image {
+            width: 50%;
+            height: 100%;
+            background: url('../assets/main-image.jpg') center/cover no-repeat;
+        }
     }
 }
