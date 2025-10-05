@@ -1,12 +1,16 @@
 @mixin flex-container($direction: row) {
-    display: flex;
-    flex-direction: $direction;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
 }
 
-
 @mixin horizontal-margin {
-    margin-left: $space-lg;
+  margin-left: $space-md; // mobile: 24px
+  margin-right: $space-md;
+
+  @media (min-width: $break-point-lg) {
+    margin-left: $space-lg; // desktop: 36px
     margin-right: $space-lg;
+  }
 }
