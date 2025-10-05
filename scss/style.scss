@@ -36,8 +36,8 @@ p {
 /* Header */
 .site-header {
     @include flex-container(row);
-    padding-top: $space-3xl; 
-    padding-bottom: $space-3xl;
+    padding-top: $space-lg; 
+    padding-bottom: $space-lg;
 }
 
 .site-header-logo {
@@ -101,35 +101,23 @@ p {
 .advantages {
     @include flex-container(column);
     padding-top: $space-3xl;
-    
+    padding-bottom: $space-3xl; 
 }
 
 .advantages_row {
     @include flex-container(column);
-    margin-bottom: $space-lg; 
+    margin-bottom: 0; 
 }
 
-.learn-more {
-    color: #97b16e;
-    font-weight: 500; 
-    text-decoration: none;
-    position: relative;
-  
-    &:hover {
-      text-decoration: underline;
+
+.advantages_row:first-of-type {
+    .advantages_item:last-child {
+        margin-bottom: $space-lg;
+        border-bottom: none; 
     }
-  
-    &::after {
-      content: ">"; 
-      font-weight: lighter;
-      font-size: 1.5em; 
-      margin-left: 0.10em; 
-      vertical-align: middle; 
-    }
-  }
+}
 
 .advantages_item {
-    // Mobile vertical spacing
     padding-top: $space-md; 
     padding-bottom: $space-md; 
     border-bottom: 1px solid lighten($text-grey, 10%); 
@@ -146,25 +134,21 @@ p {
 .advantages_title{
     padding-bottom: $space-sm;
 }
-.grey_divider {
-    display: none;
-}
 
 /* Home Loans Section */
 .home-loans {
     background-color: #ebf7f5;
-    
 }
 
 .home_loans_title {
     background-color: $primary-green;
     color: $primary-white;
     text-align: center;
-    padding: $space-sm;  
+    padding: $space-sm $space-md;  
 }
 
 .home_loans_description {
-    padding: 0 $space-sm; 
+    padding: $space-md $space-sm; 
 }
 
 /* Testimonials Section */
@@ -246,6 +230,8 @@ p {
 @media (min-width: 1024px) {
     .site-header {
         justify-content: flex-start;
+        padding-top: $space-3xl; 
+        padding-bottom: $space-3xl;
         margin-left: $horizontal-padding;
     }
 
