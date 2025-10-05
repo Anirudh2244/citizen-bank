@@ -135,6 +135,25 @@ p {
     padding-bottom: $space-sm;
 }
 
+.learn-more {
+    color: #97b16e;
+    font-weight: 500; 
+    text-decoration: none;
+    position: relative;
+  
+    &:hover {
+      text-decoration: underline;
+    }
+  
+    &::after {
+      content: ">"; 
+      font-weight: lighter;
+      font-size: 1.5em; 
+      margin-left: 0.10em; 
+      vertical-align: middle; 
+    }
+  }
+
 /* Home Loans Section */
 .home-loans {
     background-color: #ebf7f5;
