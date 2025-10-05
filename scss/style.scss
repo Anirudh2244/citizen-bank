@@ -12,8 +12,7 @@ body {
     color: black;
     margin: 0;
     padding: 0;
-    line-height: 2rem;
-
+    line-height: $space-md; 
 }
 
 h1 {
@@ -37,13 +36,15 @@ p {
 /* Header */
 .site-header {
     @include flex-container(row);
+    padding-top: $space-3xl; 
+    padding-bottom: $space-3xl;
 }
 
 .site-header-logo {
-    height: 2.25rem;
-    width: auto;
-    margin-top: $section-padding; //3.375rem- 54px
-    margin-bottom: $section-padding;
+    width: 15rem;
+    height: auto;
+    margin-top: 0; 
+    margin-bottom: 0;
 }
 
 /* Hero Banner */
@@ -73,42 +74,69 @@ p {
 /* Investment Section */
 .investment {
     @include flex-container(column);
-    padding-top: $section-padding;
+    padding-top: $space-3xl;
+    
 }
 
 .title_underline {
     width: 100px;
     height: 2px;
-    margin-top:1.625rem;
-    margin-bottom:1.625rem;
+    margin-top: $space-md; 
+    margin-bottom: $space-md; 
     background-color: $primary-green;
-    margin-bottom: $section-padding-bottom;
 }
 
 .careers_button {
     background-color: $primary-orange;
     font-size: $sub-heading-text;
     width: auto;
-    padding:0.5rem 1rem;
+    padding: $space-xs $space-sm;
     border: none;
     color: $primary-white;
-    margin-top: $section-padding;
-    margin-bottom: $section-padding;
+    margin-top: $space-3xl; 
+    cursor: pointer;
 }
 
 /* Advantages Section */
 .advantages {
     @include flex-container(column);
+    padding-top: $space-3xl;
+    
 }
 
 .advantages_row {
     @include flex-container(column);
+    margin-bottom: $space-lg; 
 }
 
+.learn-more {
+    color: #97b16e;
+    font-weight: 500; 
+    text-decoration: none;
+    position: relative;
+  
+    &:hover {
+      text-decoration: underline;
+    }
+  
+    &::after {
+      content: ">"; 
+      font-weight: lighter;
+      font-size: 1.5em; 
+      margin-left: 0.10em; 
+      vertical-align: middle; 
+    }
+  }
+
 .advantages_item {
-    margin-bottom: 1rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid $text-grey; 
+    // Mobile vertical spacing
+    padding-top: $space-md; 
+    padding-bottom: $space-md; 
+    border-bottom: 1px solid lighten($text-grey, 10%); 
+}
+
+.advantages_row:first-child .advantages_item:first-child {
+    padding-top: 0; 
 }
 
 .advantages_row:last-child .advantages_item:last-child {
@@ -116,7 +144,7 @@ p {
 }
 
 .advantages_title{
-padding-bottom:1rem;
+    padding-bottom: $space-sm;
 }
 .grey_divider {
     display: none;
@@ -132,18 +160,19 @@ padding-bottom:1rem;
     background-color: $primary-green;
     color: $primary-white;
     text-align: center;
-    padding: 0.5rem;
+    padding: $space-sm;  
 }
 
 .home_loans_description {
-    padding: 0.5rem;
+    padding: 0 $space-sm; 
 }
 
 /* Testimonials Section */
 .testimonials {
     @include flex-container(column);
-    gap: 2rem;
-    padding: $section-padding 0;
+    gap: $space-lg; 
+    padding-top: $space-3xl; 
+    padding-bottom: $space-3xl;
 }
 
 .testimonial-cards {
@@ -156,19 +185,19 @@ padding-bottom:1rem;
     width: 50%;
     height: auto;
     border-radius: 50%;
-    margin-bottom: 1rem;
+    margin-bottom: $space-sm;
 
 }
 
 .testimonials_text {
     font-style: italic;
     color: $primary-black;
-    margin-bottom: 0.5rem;
+    margin-bottom: $space-xs;
     padding-right: 4rem;
     padding-left: 4rem;
     background-image: url('../assets/qoute.png');
     background-repeat: no-repeat;
-    background-size: 70px; // Set the desired size
+    background-size: 70px; 
     background-position: 25% 0; 
 }
 
@@ -182,26 +211,29 @@ padding-bottom:1rem;
 .site-footer {
     padding-left: $horizontal-padding;
     padding-right: $horizontal-padding;
-    padding-top: 1.5rem;
+    padding-top: $space-lg; 
+    padding-bottom: $space-lg;
     border-top: 2px solid $primary-green;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem; 
+    gap: $space-md; 
   }
   
   .footer_text {
     font-size: 0.8rem;
-    line-height: 1.2rem;
+    line-height: $space-sm; 
   }
   
   .socials {
     @include flex-container(row);
-    gap: 0.5rem;
+    gap: $space-xs; 
+    justify-content: flex-start;
   }
   
   .socials-logo {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: $space-md;
+    height: $space-md;
+    cursor: pointer;
   }
   
   .privacy {
@@ -217,24 +249,57 @@ padding-bottom:1rem;
         margin-left: $horizontal-padding;
     }
 
+    .site-header-logo{
+        width: 20rem;
+    }
+
     .advantages_row {
         flex-direction: row;
-        gap: 2rem;
-        padding-top: 2rem;
-        padding-bottom: 3rem;
-        align-items: stretch;
+        padding-bottom: $space-xl; // 2*space-3xl
+        margin-bottom: 0; 
+    
         
         .advantages_item {
             flex: 1;
-            margin-bottom: 0;
-            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0; 
+            padding-bottom: 0; 
             border-bottom: none !important;
 
-            &:not(:last-child) {
-                position: relative; 
-                padding-right: 2rem; 
+            h2, p {
+                padding-left: $space-sm;
+                padding-right: $space-sm;
             }
             
+            &:first-child {
+                h2, p {
+                    padding-left: 0; 
+                }
+            }
+            
+            &:last-child {
+                h2, p {
+                    padding-right: 0; 
+                }
+            }
+            
+            &:not(:last-child) {
+                position: relative; 
+                
+                
+                h2, p {
+                    padding-right: $space-md; 
+                }
+            }
+            
+            &:not(:first-child) {
+                h2, p {
+                    padding-left: $space-md; 
+                }
+            }
+
+            // Vertical Divider Style
             &:not(:last-child)::after {
                 content: '';
                 position: absolute;
@@ -242,25 +307,27 @@ padding-bottom:1rem;
                 right: 0; 
                 width: 1px;
                 height: 100%; 
-                background-color: $text-grey;
+                background-color: lighten($text-grey, 10%);
             }
         }
     }
 
     .home_loans_description {
-        padding: 2rem 4rem;
+        padding: $space-md $space-3xl; 
     }
 
     .testimonials {
         flex-direction: row;
         justify-content: space-evenly;
-        align-items: stretch; 
+        align-items: stretch;
+        margin: 0 $space-3xl;
       }
     
       .testimonial-cards {
-        padding:3rem;
+        // padding: $space-lg;
+        gap: $space-sm;
         @include flex-container(column);
-        justify-content: space-between; 
+        justify-content: space-around; 
         align-items: center;
         text-align: center;
       }
@@ -270,18 +337,18 @@ padding-bottom:1rem;
         height: 11rem;
         border-radius: 50%;
         object-fit: cover;
-        margin-bottom: 1rem;
+        margin-bottom: $space-sm;
       }
     
       .testimonials_text {         
-        padding: 0 0.5rem;
-        margin-bottom: 0.5rem;
+        padding: 0 $space-xs;
+        margin-bottom: $space-xs;
         background-position: 0;  
       }
 
       .testimonials_author {         
-        padding: 0 0.5rem;
-        margin-bottom: 0.5rem;
+        padding: 0 $space-xs;
+        margin-bottom: $space-xs;
         display: flex;
         align-items: center;  
       }
