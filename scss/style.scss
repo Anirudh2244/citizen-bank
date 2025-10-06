@@ -5,34 +5,30 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-weight: normal;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  color: black;
-  margin: 0;
-  padding: 0;
-  line-height: $space-md;
-}
-
-h1 {
-  text-align: center;
-  color: $primary-green;
-  font-size: $heading-text;
-  font-weight: normal;
-  line-height: $heading-text;
+  font-family: $font-family;
+  color: $primary-black;
 }
 
 h2 {
+  text-align: center;
   color: $primary-green;
-  font-weight: normal;
+  font-size: $heading-text;
+  line-height: $line-height-tight;
+}
+
+h3 {
+  color: $primary-green;
   font-size: $sub-heading-text;
-  line-height: $sub-heading-text;
+  line-height: $line-height-tight;
 }
 
 p {
   color: $text-grey;
-  line-height: $para-text * 1.5;
+  line-height: $line-height-base;
   font-size: $para-text;
 }
 
@@ -46,15 +42,12 @@ p {
 .site-header-logo {
   width: 15rem;
   height: auto;
-  margin-top: 0;
-  margin-bottom: 0;
 }
 
 /* Hero Banner */
 .hero-banner {
   width: 100%;
   aspect-ratio: 3 / 2;
-  max-height: auto;
   position: relative;
 
   .trapezoid {
@@ -126,7 +119,7 @@ p {
 }
 
 .learn-more {
-  color: #97b16e;
+  color: $lime-color;
   font-weight: 500;
   text-decoration: none;
   position: relative;
@@ -138,9 +131,9 @@ p {
   &::after {
     content: ">";
     font-weight: lighter;
-    font-size: 1.5em;
-    margin-left: 0.1em;
-    vertical-align: middle;
+    font-size: 1em;
+    margin-left: 0.2em;
+    vertical-align: center;
   }
 }
 
@@ -203,8 +196,9 @@ p {
   padding: $space-md 0;
   gap: $space-md;
   border-top: 1px solid $primary-green;
-  display: flex;
-  flex-direction: column;
+  @include flex-container(column);
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .footer_text {
@@ -239,6 +233,25 @@ p {
 
 /* Media Queries Section */
 
+@media (min-width: $break-point-md) and (max-width: $break-point-lg) {
+  .site-header {
+    justify-content: flex-start;
+    margin-top: $space-xl;
+    margin-bottom: $space-xl;
+    margin-left: $space-sm;
+  }
+
+  .site-header-logo {
+    width: 20rem;
+  }
+
+  @include hero-banner-styles;
+
+  .testimonials {
+    margin: 0 $space-3xl * 3 $space-3xl $space-3xl * 3;
+  }
+}
+
 @media (min-width: $break-point-lg) {
   .site-header {
     justify-content: flex-start;
@@ -251,31 +264,7 @@ p {
     width: 20rem;
   }
 
-  .hero-banner {
-    display: block;
-    height: calc(100vw / 3);
-    position: relative;
-
-    .trapezoid {
-      display: block;
-      position: absolute;
-      top: 0;
-      right: 0;
-      left: auto;
-      width: 50%;
-      height: 100%;
-
-      background-color: rgba(43, 113, 91, 0.8);
-      z-index: 10;
-      clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
-    }
-
-    .hero-image {
-      width: 100%;
-      height: 100%;
-      background: url("../assets/main-image.png") center/cover no-repeat;
-    }
-  }
+  @include hero-banner-styles;
 
   .advantages_list {
     flex-direction: row;
@@ -336,7 +325,6 @@ p {
   .testimonials_author {
     padding: 0 $space-xs;
     margin: auto 0 0;
-    display: flex;
-    align-items: center;
+    @include flex-container(row);
   }
 }

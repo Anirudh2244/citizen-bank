@@ -2,35 +2,31 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-weight: normal;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  color: black;
-  margin: 0;
-  padding: 0;
-  line-height: 24px;
-}
-
-h1 {
-  text-align: center;
-  color: #21955e;
-  font-size: 32px;
-  font-weight: normal;
-  line-height: 32px;
+  font-family: "Arial, sans-serif";
+  color: #6e6e6e;
 }
 
 h2 {
+  text-align: center;
   color: #21955e;
-  font-weight: normal;
+  font-size: 32px;
+  line-height: 1.2;
+}
+
+h3 {
+  color: #21955e;
   font-size: 24px;
-  line-height: 24px;
+  line-height: 1.2;
 }
 
 p {
   color: #939393;
-  line-height: 24px;
-  font-size: 16px;
+  line-height: 1.5;
+  font-size: 18px;
 }
 
 /* Header */
@@ -46,15 +42,12 @@ p {
 .site-header-logo {
   width: 15rem;
   height: auto;
-  margin-top: 0;
-  margin-bottom: 0;
 }
 
 /* Hero Banner */
 .hero-banner {
   width: 100%;
   aspect-ratio: 3/2;
-  max-height: auto;
   position: relative;
 }
 .hero-banner .trapezoid {
@@ -154,9 +147,9 @@ p {
 .learn-more::after {
   content: ">";
   font-weight: lighter;
-  font-size: 1.5em;
-  margin-left: 0.1em;
-  vertical-align: middle;
+  font-size: 1em;
+  margin-left: 0.2em;
+  vertical-align: center;
 }
 
 /* Home Loans Section */
@@ -226,6 +219,10 @@ p {
   border-top: 1px solid #21955e;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .footer_text {
@@ -283,6 +280,42 @@ p {
 }
 
 /* Media Queries Section */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .site-header {
+    justify-content: flex-start;
+    margin-top: 48px;
+    margin-bottom: 48px;
+    margin-left: 16px;
+  }
+  .site-header-logo {
+    width: 20rem;
+  }
+  .hero-banner {
+    display: block;
+    height: 33.3333333333vw;
+    position: relative;
+  }
+  .hero-banner .trapezoid {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: auto;
+    width: 50%;
+    height: 100%;
+    background-color: rgba(43, 113, 91, 0.8);
+    z-index: 10;
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+  }
+  .hero-banner .hero-image {
+    width: 100%;
+    height: 100%;
+    background: url("../assets/main-image.png") center/cover no-repeat;
+  }
+  .testimonials {
+    margin: 0 168px 56px 168px;
+  }
+}
 @media (min-width: 1024px) {
   .site-header {
     justify-content: flex-start;
@@ -370,6 +403,8 @@ p {
     padding: 0 8px;
     margin: auto 0 0;
     display: flex;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
   }
 }/*# sourceMappingURL=style.css.map */

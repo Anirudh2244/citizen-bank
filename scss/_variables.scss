@@ -3,7 +3,11 @@ $font-family: "Arial, sans-serif";
 // Typography Scale
 $heading-text: 32px;
 $sub-heading-text: 24px;
-$para-text: 16px;
+$para-text: 18px;
+
+$line-height-tight: 1.2; // for headings
+$line-height-base: 1.5; // for paragraphs
+$line-height-loose: 1.7; // for long text
 
 // Color Palette
 $primary-green: #21955e;
@@ -11,7 +15,9 @@ $primary-orange: #e97300;
 $primary-black: #6e6e6e;
 $primary-white: #ffffff;
 $text-grey: #939393;
+$lime-color: #97b16e;
 
+// for spacing
 $space-xs: 8px;
 $space-sm: 16px;
 $space-md: 24px;
@@ -21,6 +27,7 @@ $space-3xl: 56px;
 
 $divider-height: 120px;
 
+//break points
 $break-point-sm: 576px;
 $break-point-md: 768px;
 $break-point-lg: 1024px;
