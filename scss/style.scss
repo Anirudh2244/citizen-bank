@@ -295,7 +295,7 @@ p {
 
   .testimonials {
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: stretch;
     margin: 0 $space-3xl $space-3xl $space-3xl;
   }
@@ -307,7 +307,10 @@ p {
     align-items: center;
     text-align: center;
     padding: 0 $space-sm;
-    max-width: 40%;
+    max-width: 600px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    // flex-basis: 0; // or 0% works well with flex-grow: 1
   }
 
   .testimonials_image {

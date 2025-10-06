@@ -372,7 +372,7 @@ p {
   }
   .testimonials {
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: stretch;
     margin: 0 56px 56px 56px;
   }
@@ -386,7 +386,9 @@ p {
     align-items: center;
     text-align: center;
     padding: 0 16px;
-    max-width: 40%;
+    max-width: 600px;
+    flex-grow: 1;
+    flex-shrink: 1;
   }
   .testimonials_image {
     width: auto;
