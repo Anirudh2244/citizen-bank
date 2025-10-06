@@ -306,11 +306,10 @@ p {
     justify-content: start;
     align-items: center;
     text-align: center;
-    padding: 0 $space-sm;
+    padding: 0 $space-md;
     max-width: 600px;
     flex-grow: 1;
     flex-shrink: 1;
-    // flex-basis: 0; // or 0% works well with flex-grow: 1
   }
 
   .testimonials_image {
